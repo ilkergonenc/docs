@@ -13,26 +13,23 @@ header:
     href: '#'
     type: btn
 
-categories:
-
-  - name: getting started
+docs:
+  - group: getting-started
     items:
-      - name: introduction
-      - name: file structure
-      - name: build tools
-        
-  - name: components
+      - introduction
+      - file-structure
+      - build-tools
+  - group: components
     items:
-      - name: alerts
-      - name: buttons
-      - name: dropdowns
-      - name: forms
-      - name: input group
-
-  - name: plugins
+      - alerts
+      - buttons
+      - dropdowns
+      - forms
+      - input-group
+  - group: plugins
     items:
-      - name: drawer
-      - name: show hide password
+      - drawer
+      - show-hide-password
   
 socialLinks:
   - platform: Github
@@ -52,18 +49,3 @@ socialLinks:
     icon: fa-instagram
     link: '#'
 
-
-docs:
-  - getting-started:
-    - introduction
-    - file-structure
-    - build-tools
-  - components:
-    - alerts
-    - buttons
-    - dropdowns
-    - forms
-    - input-group
-  - plugins:
-    - drawer
-    - show-hide-password

@@ -2,53 +2,22 @@
   form.form-inline.w-100.mx-3(action='', autocomplete='off')
     input#search-input-sidebar.search-elements.form-control.w-100(type='search', placeholder='Search', aria-label='Search', autocomplete='off')
 
-    //- button.btn(type='submit', style='margin-left:-2.5rem; border:none;')
-    //-   i.fas.fa-search
-  //- #search-results-list-sidebar.search-elements.list-group
-  
 nav.text-right
-
   ul#sidebarAccordion.sidebar-accordion
-
-    each group in categories
-      - var str = group.name;
+    each item in docs
+      - var slug = item.group;
       - var title = str.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()});
-      - var slug = str.toLowerCase().replace(/[^\w ]+/g, "").replace(/ +/g, "-");
       - var headId = 'heading' + title.replace(' ', '');
       - var _headId = '#' + headId;
       - var collapseId = 'collapse' + title.replace(' ', '');
       - var _collapseId = '#' + collapseId;
-      
       li.sidebar-accordion-group-item
         a.sidebar-accordion-group-link(id=headId, data-toggle='collapse', data-target=_collapseId, aria-expanded='false', aria-controls=collapseId) #{title}
         .collapse(id=collapseId, aria-labelledby=headId, data-parent='#sidebarAccordion')
           ul.sidebar-accordion-group-list
-            each item in group.items
-              - var itemStr = item.name;
+            each item in item.items
+              - var itemSlug = item;
               - var itemTitle = itemStr.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()});
-              - var itemSlug = itemStr.toLowerCase().replace(/[^\w ]+/g, "").replace(/ +/g, "-");
               - var _href = '/docs/' + slug + '/' + itemSlug + '/';
               li.sidebar-accordion-group-list-item 
                 a.sidebar-accordion-group-list-link(href=_href) #{itemTitle}
-
-    //- li(class='')
-
-    //-   a(data-toggle='collapse', data-target='#groupId', aria-expanded='true', aria-controls='groupId')
-    //-     | Getting Started
-
-    //-   .collapse(id='groupId', class='show', aria-labelledby='headingOne', data-parent='#sidebarAccordion')
-    //-     ul
-    //-       li(class='active')
-    //-         a(href='introductions.html') 
-    //-           | Introductions
-
-    //- li(class='')
-
-    //-   a(data-toggle='collapse', data-target='#groupId', aria-expanded='true', aria-controls='groupId')
-    //-     | Components
-
-    //-   .collapse(id='groupId', class='show', aria-labelledby='headingOne', data-parent='#sidebarAccordion')
-    //-     ul
-    //-       li(class='active')
-    //-           a(href='alerts.html') 
-    //-             | Alerts
