@@ -1,18 +1,29 @@
 ---
+route:
+  single: String::handle   #single route name|key
+  redirect: String::href   #single opt redirect to href
+  group: String::handle    #group route name|key
+  items: Array::handle     #group items array
+  
 router: 
-	- index: 
-  	  redirect: docs/getting-started/introduction
-  - docs:
-  	- getting-started:
-    	- introduction
-      - file-structure
-      - build-tools
-    - components:
-      - alerts
-      - buttons
-      - dropdowns
-      - forms
-      - input-group
-    - plugins:
-      - drawer
-      - show-hide-password
+	- single: index
+  	redirect: docs/getting-started/introduction
+
+  - group: docs
+    items:
+      - group: getting-started
+        items:
+          - introduction
+          - file-structure
+          - build-tools
+      - group: components
+        items:
+          - alerts
+          - buttons
+          - dropdowns
+          - forms
+          - input-group
+      - group: plugins
+        items:
+          - drawer
+          - show-hide-password
