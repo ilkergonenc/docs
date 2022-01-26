@@ -1,0 +1,86 @@
+// HEADER
+header > .navbar {
+  height: 4rem;
+
+  .dropdown-toggle,
+  .dropdown-menu button {
+    &:after {
+      // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "";
+      color: #777;
+      vertical-align: baseline;
+      margin-left: 0.35rem;
+      border: none;
+    }
+
+    &.collapsed:after {
+      content: "";
+    }
+  }
+
+  .dropdown-toggle:after {
+    content: "";
+  }
+
+  button.sidebar-toggle {
+    font-size: 1.25rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  
+  .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+  }
+
+  #mobileDD {
+    #mobileDDMenu {
+      font-size: 1.25rem;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+
+    .dropdown-menu {
+      position: fixed;
+      top: -3px;
+      border: 0;
+      border-radius: 0;
+
+      .dropdown-item:first-child {
+        padding-right: 0.85rem;
+        padding-top: 0.6rem;
+        padding-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .dropdown-item.active {
+        background-color: #f8f9fa;
+        color: $body-color;
+        font-weight: 500;
+      }
+
+      .social-links li a {
+        padding: 0.5rem !important;
+      }
+    }
+  }
+}
+.btn-rounded {
+  padding: .6rem 1.8rem; 
+  border-radius: 2rem;
+}
+@media (min-width: 991px) {
+  header.sticky-top {
+    z-index: 1100;
+  }
+}

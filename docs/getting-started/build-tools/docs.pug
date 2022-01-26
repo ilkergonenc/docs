@@ -1,0 +1,10 @@
+extends ../../../ui/layouts/docs.pug
+
+block variables
+  - var id = 'build-tools'
+  - var group = 'GettingStarted'
+  - var title = 'Build Tools'
+  - var desc = 'Learn how to use Bend UI’s included npm scripts to serve our documentation, compile source code and easy you workflow with Gulp toolkit'
+
+block content
+  include:markdown-it ./tooling-setup.md

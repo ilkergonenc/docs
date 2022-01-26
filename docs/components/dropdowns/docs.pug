@@ -1,0 +1,19 @@
+extends ../../../ui/layouts/docs.pug
+block variables
+  - var id = 'dropdown'
+  - var group = 'Components'
+  - var title = 'Dropdown'
+  - var desc = 'Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.'
+
+block append page-header
+  +link-ext('https://getbootstrap.com/docs/4.3/components/dropdowns/', 'Bootstrap dropdowns')
+
+block content
+
+  .example.my-4
+    include ./example.html
+  
+  +highlight("html")
+    include:highlight(lang="html") ./example.html
+
+    

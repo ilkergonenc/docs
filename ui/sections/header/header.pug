@@ -1,0 +1,85 @@
+nav.navbar.navbar-expand-lg.navbar-light.border-bottom.px-0
+  //- .container-fluid.p-0
+  .d-none.d-lg-block.col-lg-2.px-3.border-right.mr-4
+
+    form.form-inline.collapse.navbar-collapse(action='', autocomplete='off')
+      input#search-input-header.search-elements.form-control.w-100(type='search', placeholder='Search...', aria-label='Search', autocomplete='off')
+      //- #search-results-list-header.search-elements.list-group(style='position: absolute; top: 2.4rem; width: 14.5rem;')
+
+      //- button.btn(type='submit', style='margin-left:-2.5rem; border:none;')
+          i.fas.fa-search
+  button.btn.sidebar-toggle.bg-transparent.border-0.d-lg-none(type='button', data-bend='drawer', data-target='#docsSidebar')
+    i.fas.fa-bars
+
+  a.navbar-brand(href='#')
+    h1.h3.mb-0
+      span(style='font-weight:400') #{name} 
+      //- span(style='font-weight:300') Elements
+      span(style='font-weight:300') #{group}
+
+  #mobileDD.dropdown.d-lg-none
+    button#mobileDDMenu.btn.dropdown-toggle(type='button', data-toggle='dropdown', data-boundary='window')
+      i.fas.fa-ellipsis-v
+    .dropdown-menu.dropdown-menu-right.shadow-lg.text-center(aria-labelledby='mobileDDMenu')
+      .dropdown-item.text-right
+        i.fas.fa-ellipsis-v
+      each item in header
+        if item.type === 'btn'
+          a.btn.btn-dark.btn-block.rounded-0.py-3(href='#') #{item.title}
+        else
+          if item.active === true
+            a.dropdown-item.active.py-3.border-top(href=item.href) #{item.title}
+          else
+            a.dropdown-item.py-3.border-top(href=item.href) #{item.title}
+          //- .dropdown-divider
+      //- a.dropdown-item(href='../examples.html') Examples
+      //- .dropdown-divider
+      //- button.btn.btn-light.btn-block.dropdown-item.collapsed(data-target='#versionsCollapse', role='button', data-toggle='collapse', style='padding: .75rem; border-radius: 0;')
+        | Version (v.1.2)
+      //- #versionsCollapse.collapse.bg-light
+        .dropdown-divider.mt-0
+        a.dropdown-item(href='#') v.1.2
+        .dropdown-divider
+        a.dropdown-item(href='#') v.1.1
+        .dropdown-divider
+        a.dropdown-item(href='#') v.1.0
+        .dropdown-divider.mb-0
+      //- a.btn.btn-dark.btn-block(href='#', style='padding: .75rem; border-radius: 0;') Download
+      //- .dropdown-divider.mt-0
+      .dropdown-item.pt-3
+        include ../../components/navs/social-links.pug
+  
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.align-items-center.ml-auto
+      each item in header
+        if item.type === 'btn'
+          li.nav-item: a.btn.btn-dark.btn-rounded.ml-2(href=item.href) #{item.title}
+        else
+          if item.active === true
+            li.nav-item.active: a.nav-link(href=item.href) #{item.title}
+          else
+            li.nav-item: a.nav-link(href=item.href) #{item.title}
+
+      //- li.nav-item.active: a.nav-link(href='../') Home
+      //- li.nav-item.active: a.nav-link(href='../docs') Documentation
+      //- li.nav-item.active: a.nav-link(href='../examples.html') Examples
+      //- li.nav-item: a.nav-link(href='#') Chancelog
+      //- li.nav-item.px-3: a.nav-link(href='#') Live Preview
+      //- li.nav-item.dropdown.mr-3
+        a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | v.1.2
+        .dropdown-menu.dropdown-menu-right.text-right(aria-labelledby='navbarDropdown', style='top:50px; border-radius:0')
+          a.dropdown-item(href='#') v.1.2
+          .dropdown-divider
+          a.dropdown-item(href='#') v.1.1
+          .dropdown-divider
+          a.dropdown-item(href='#') v.1.0
+          //- .dropdown-divider
+          //- a.dropdown-item(href='#') Changelog
+      //- li.nav-item: a.btn.btn-dark(href='#', style='padding: .6rem 1.8rem; border-radius: 2rem;') Download
+
+  .d-none.d-lg-block.col-lg-2.px-3.border-left.ml-4
+    include ../../components/navs/social-links.pug
+  
+  //- .col-2
+      a.btn.btn-dark.btn-block(href='#', style='padding: .6rem 1.8rem; border-radius: 2rem;') Download

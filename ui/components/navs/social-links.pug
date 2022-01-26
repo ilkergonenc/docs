@@ -1,0 +1,10 @@
+mixin social-links-item(platform, username, icon, link)
+  - var title = username + ' on ' + platform;
+  li.list-inline-item.nav-item
+    a.nav-link(href=link, title=title, target='_blank')
+      i.fab(class=icon, aria-hidden='true')
+        span.username.sr-only= username
+
+ul.list-inline.navbar-nav.social-links.flex-row.mb-0
+  each social in socialLinks
+    +social-links-item(social.platform, social.username, social.icon, social.link)

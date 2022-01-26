@@ -1,0 +1,42 @@
+extends ../../../ui/layouts/docs.pug
+block variables
+  - var id = 'forms'
+  - var group = 'Components'
+  - var title = 'Forms'
+  - var desc = 'Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.'
+  - var colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
+
+block append page-header
+  +link-ext('https://getbootstrap.com/docs/4.3/components/forms/', 'Bootstrap forms')
+
+block content
+
+  +anchor-h2('floating labels')
+
+  form(action='')
+    .form-group.floating-label
+      label(for='exampleInputEmail1') Email address
+      input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp')
+
+    .form-group.floating-label
+      label.form-label-sm(for='exampleInputEmail1') Email address
+      input#exampleInputEmail1.form-control.form-control-sm(type='email', aria-describedby='emailHelp')
+
+    .form-group.floating-label
+      label.form-label-lg(for='exampleInputEmail1') Email address
+      input#exampleInputEmail1.form-control.form-control-lg(type='email', aria-describedby='emailHelp')
+
+    .form-group.floating-label
+      label(for='exampleFormControlTextarea1') Example textarea
+      textarea#exampleFormControlTextarea1.form-control(rows='3')
+
+    .form-group.floating-label.mt-5
+      label(for='exampleFormControlTextarea1') Example textarea
+      textarea#exampleFormControlTextarea1.form-control(rows='3', maxlength='146', aria-describedby='emailHelp')
+      small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+
+    .custom-control.custom-checkbox.mb-3
+      input#customCheck1.custom-control-input(type='checkbox')
+      label.custom-control-label(for='customCheck1') Check this custom checkbox
+
+    button.btn.btn-primary(type='submit') Submit

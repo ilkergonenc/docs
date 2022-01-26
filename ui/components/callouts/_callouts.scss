@@ -1,0 +1,62 @@
+//
+// Callouts
+//
+
+
+$callout-bg-level:      -10 !default;
+$callout-border-level:  -9 !default;
+$callout-color-level:   6 !default;
+
+.callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  // border: 1px solid #eee;
+  // border-left-width: .25rem;
+  border-left: .5rem solid #eee;
+  // @include border-radius();
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: .25rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    @include border-radius();
+  }
+
+  + .callout {
+    margin-top: -.25rem;
+  }
+}
+
+@mixin callout-variant($background, $border, $color) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+
+  hr {
+    border-top-color: shade-color($border, 5%);
+  }
+
+  .callout-link, 
+  .callout-title {
+    color: shade-color($color, 10%);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  @if ($color == 'info' or $color == 'danger' or $color == 'warning') {
+    .callout-#{$color} {
+      @include callout-variant(
+        theme-color-level($color, $callout-bg-level), 
+        theme-color-level($color, $callout-border-level), 
+        theme-color-level($color, $callout-color-level)
+        );
+    }
+  }
+}

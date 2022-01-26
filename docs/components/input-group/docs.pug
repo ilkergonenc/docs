@@ -1,0 +1,75 @@
+extends ../../../ui/layouts/docs.pug
+block variables
+  - var id = 'input-group'
+  - var group = 'Components'
+  - var title = 'Input group';
+  - var desc = 'Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.'
+  - var colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
+
+block append page-header
+  +link-ext('https://getbootstrap.com/docs/4.3/components/input-group/', 'Bootstrap input group')
+
+block content
+
+  +anchor-h2('Input group flush')
+
+  .input-group.input-group-flush.mb-3
+    .input-group-prepend
+      span#basic-addon1.input-group-text @
+    input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1')
+
+  +anchor-h2('Group focus')
+
+  .input-group.input-group-focus.mb-3
+    input.form-control(type='text', placeholder='Recipient\'s username', aria-label='Recipient\'s username', aria-describedby='basic-addon2')
+    .input-group-append
+      span#basic-addon2.input-group-text @example.com
+
+  +anchor-h3('Flush & Group focus')
+
+  .input-group.input-group-flush.input-group-focus.mb-3
+    .input-group-prepend
+      span#basic-addon3.input-group-text https://example.com/users/
+    input#basic-url.form-control(type='text', aria-describedby='basic-addon3')
+
+  +anchor-h2('Show Hide Password')
+  .input-group.input-group-flush.input-group-focus.mb-3
+    input#passwordInput.form-control(type='password', placeholder='Password', value='pa$$w0rD')
+    .input-group-append
+      button.btn.btn-input-group.shadow-none(type='button', data-bend-toggle='password', data-bend-target='#passwordInput') 
+
+  hr.bt-2.bt-dashed.b-secondary.my-4
+
+  .input-group.mb-3
+    .input-group-prepend
+      span.input-group-text $
+    input.form-control(type='text', aria-label='Amount (to the nearest dollar)')
+    .input-group-append
+      span.input-group-text .00
+
+  .input-group
+    .input-group-prepend
+      span.input-group-text With textarea
+    textarea.form-control(aria-label='With textarea')
+
+  .input-group.mb-3
+    .input-group-prepend
+      button.btn.btn-outline-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+      .dropdown-menu
+        a.dropdown-item(href='#') Action
+        a.dropdown-item(href='#') Another action
+        a.dropdown-item(href='#') Something else here
+        .dropdown-divider(role='separator')
+        a.dropdown-item(href='#') Separated link
+    input.form-control(type='text', aria-label='Text input with dropdown button')
+    
+  .input-group
+    input.form-control(type='text', aria-label='Text input with dropdown button')
+    .input-group-append
+      button.btn.btn-outline-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+      .dropdown-menu
+        a.dropdown-item(href='#') Action
+        a.dropdown-item(href='#') Another action
+        a.dropdown-item(href='#') Something else here
+        .dropdown-divider(role='separator')
+        a.dropdown-item(href='#') Separated link

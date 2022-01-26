@@ -1,0 +1,57 @@
+extends ../../../ui/layouts/docs.pug
+
+block variables
+  - var id = 'alerts'
+  - var group = 'Components'
+  - var title = 'Alerts'
+  - var desc = 'Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.'
+
+block append page-header
+  +link-ext('https://getbootstrap.com/docs/4.5/components/alerts/', 'Bootstrap alerts')
+
+block content
+
+  +anchor-h2('Examples')
+  p Use the #[code .alert-*] classes.
+  +example-tab('default', true)
+    +tab-preview('default')(class='p-3') 
+      include ./default.example.html
+    +tab-html('default') 
+      +highlightTab("html")
+        include:highlight(lang="html") ./default.example.html
+
+  +anchor-h2('Link color')
+  p Use the #[code .alert-link] utility class to quickly provide matching colored links within any alert.
+  +example-tab('linkColor', true)
+    +tab-preview('linkColor')(class='p-3')
+      include ./linkColor.example.html
+    +tab-html('linkColor') 
+      +highlightTab("html")
+        include:highlight(lang="html") ./linkColor.example.html
+        
+  +anchor-h2('Additional content')
+  p Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+  +example-tab('additionalContent', true)
+    +tab-preview('additionalContent')(class='p-3') 
+      include ./additionalContent.example.html
+    +tab-html('additionalContent') 
+      +highlightTab("html")
+        include:highlight(lang="html") ./additionalContent.example.html
+
+  +anchor-h2('Dismissing')
+  p Using the alert JavaScript plugin, it’s possible to dismiss any alert inline.
+  +example-tab('dismissing', true)
+    +tab-preview('dismissing')(class='p-3') 
+      include ./dismissing.example.html
+    +tab-html('dismissing') 
+      +highlightTab("html")
+        include:highlight(lang="html") ./dismissing.example.html
+
+  +anchor-h2('Soft style')
+  p Use the #[code .alert-soft-*] classes.
+  +example-tab('soft', true)
+    +tab-preview('soft')(class='p-3') 
+      include ./soft.example.html
+    +tab-html('soft') 
+      +highlightTab("html")
+        include:highlight(lang="html") ./soft.example.html

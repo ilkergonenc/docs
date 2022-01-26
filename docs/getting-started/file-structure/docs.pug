@@ -1,0 +1,19 @@
+extends ../../../ui/layouts/docs.pug
+
+block variables
+  - var id = 'file-structure'
+  - var group = 'GettingStarted'
+  - var title = 'File structure'
+  - var desc = 'Discover what’s included in Bend UI, including our precompiled and source code flavors.'
+
+block content
+
+  +anchor-h2('Precompiled')
+
+  p Once downloaded, unzip the compressed folder and you’ll see something like this:
+
+  +highlight("plaintext")
+    include:highlight(lang="plaintext") ./precompiled.txt
+
+  include:markdown-it ./file-structure.md
+

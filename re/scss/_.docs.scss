@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "fonts";
+
+@import "imports";
+
+.example {
+  [class^=border] {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin: .25rem;
+    background-color: #f5f5f5;
+  }
+  .progress:not(:first-child) {
+    margin-top: 10px;
+  }
+  .close {
+    float: none;
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "group": "getting started",
+    "name": "introduction"
+  },
+  {
+    "group": "getting started",
+    "name": "file structure"
+  },
+  {
+    "group": "getting started",
+    "name": "build tools"
+  },
+  {
+    "group": "components",
+    "name": "alerts"
+  },
+  {
+    "group": "components",
+    "name": "buttons"
+  },
+  {
+    "group": "components",
+    "name": "dropdowns"
+  },
+  {
+    "group": "components",
+    "name": "forms"
+  },
+  {
+    "group": "components",
+    "name": "input group"
+  },
+  {
+    "group": "plugins",
+    "name": "drawer"
+  },
+  {
+    "group": "plugins",
+    "name": "show hide password"
+  }
+]

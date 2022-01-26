@@ -1,0 +1,27 @@
+extends ../../../ui/layouts/docs.pug
+    
+block variables
+  - var id = "show-hide-password"
+  - var group = "Plugins"
+  - var title = "Show/Hide Password"
+  - var desc = ""
+
+block append page-header
+
+block content
+  include:markdown-it ./overview.md
+  
+  :markdown-it
+    ## Example
+    
+  .example.my-4
+    include ./example.html
+  
+  +highlight("html")
+    include:highlight(lang="html") ./example.html
+
+  include:markdown-it(html=true typographer=true) ./options.md
+
+  include:markdown-it(langPrefix='') ./methods.md
+
+  include:markdown-it(langPrefix='') ./events.md

@@ -1,0 +1,69 @@
+---
+name: bend.ui
+meta:
+  title: Bend UI - Opensource Bootstrap Project
+
+header: 
+  - title: Home
+    href: ../
+  - title: Examples
+    href: ../examples.hmtl
+    active: true
+  - title: Download
+    href: '#'
+    type: btn
+
+categories:
+
+  - name: getting started
+    items:
+      - name: introduction
+      - name: file structure
+      - name: build tools
+        
+  - name: components
+    items:
+      - name: alerts
+      - name: buttons
+      - name: dropdowns
+      - name: forms
+      - name: input group
+
+  - name: plugins
+    items:
+      - name: drawer
+      - name: show hide password
+  
+socialLinks:
+  - platform: Github
+    username: bendthemes
+    icon: fa-github
+    link: '#'
+  - platform: Dribbble
+    username: bendthemes
+    icon: fa-dribbble
+    link: '#'
+  - platform: Behance
+    username: bendthemes
+    icon: fa-behance
+    link: '#'
+  - platform: Instagram
+    username: bendthemes
+    icon: fa-instagram
+    link: '#'
+
+
+docs:
+  - getting-started:
+    - introduction
+    - file-structure
+    - build-tools
+  - components:
+    - alerts
+    - buttons
+    - dropdowns
+    - forms
+    - input-group
+  - plugins:
+    - drawer
+    - show-hide-password

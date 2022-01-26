@@ -1,0 +1,33 @@
+extends ../../../ui/layouts/docs.pug
+
+block variables
+  - var id = 'introduction'
+  - var group = 'GettingStarted'
+  - var title = 'Introduction'
+  - var desc = 'Get started with BendUI, Responsive Website Template for building responsive, mobile-first sites, with Bootstrap and a template starter page.'
+
+block content
+
+  //- Download
+  +anchor-h2('Download')
+
+  P You can download from your console via github
+
+  +highlight("plaintext")
+    include:highlight(lang="plaintext") ./github.txt
+
+  p or you can download the source files as a zip folder and extract it
+
+  button.btn.btn-outline-primary(type='submit') Download source
+
+  include:markdown-it ../file-structure/file-structure.md
+
+  //- Starter template
+  +anchor-h2('Starter template')
+
+  p Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:
+
+  +highlight("html")
+    include:highlight(lang="html") ./starter-template.html
+
+  include:markdown-it ./important-globals.md

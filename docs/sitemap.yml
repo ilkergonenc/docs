@@ -1,0 +1,18 @@
+---
+router: 
+	- index: 
+  	  redirect: docs/getting-started/introduction
+  - docs:
+  	- getting-started:
+    	- introduction
+      - file-structure
+      - build-tools
+    - components:
+      - alerts
+      - buttons
+      - dropdowns
+      - forms
+      - input-group
+    - plugins:
+      - drawer
+      - show-hide-password

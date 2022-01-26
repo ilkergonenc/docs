@@ -1,0 +1,81 @@
+extends ../../../ui/layouts/docs.pug
+mixin button(color)
+  - var color_class = 'btn-' + color;
+  - var attirbute_classes = attributes.class;
+  if attirbute_classes !== ''
+    - var _class = color_class + ' ' + attirbute_classes;
+  else
+    - var _class = color_class;
+
+  button.btn(class=_class, type='button')
+    | #{color.charAt(0).toUpperCase() + color.slice(1)}
+
+block variables
+  - var id = 'buttons'
+  - var group = 'Components'
+  - var title = 'Buttons'
+  - var desc = 'Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.'
+  - var colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
+
+block append page-header
+  +link-ext('https://getbootstrap.com/docs/4.3/components/buttons/', 'Bootstrap buttons')
+
+block content
+
+  +anchor-h2('Ordinary')
+
+  each _color in colors
+      
+    +button(_color)
+
+  +button('link')
+
+  //- button.btn.btn-primary(type='button') Primary
+  //- button.btn.btn-secondary(type='button') Secondary
+  //- button.btn.btn-success(type='button') Success
+  //- button.btn.btn-danger(type='button') Danger
+  //- button.btn.btn-warning(type='button') Warning
+  //- button.btn.btn-info(type='button') Info
+  //- button.btn.btn-light(type='button') Light
+  //- button.btn.btn-dark(type='button') Dark
+  //- button.btn.btn-link(type='button') Link
+
+  hr
+
+  +anchor-h2('Outline')
+
+  button.btn.btn-outline-primary.border-0(type='button') Primary
+  button.btn.btn-outline-secondary(type='button') Secondary
+  button.btn.btn-outline-success(type='button') Success
+  button.btn.btn-outline-danger(type='button') Danger
+  button.btn.btn-outline-warning(type='button') Warning
+  button.btn.btn-outline-info(type='button') Info
+  button.btn.btn-outline-light(type='button') Light
+  button.btn.btn-outline-dark(type='button') Dark
+
+  hr
+
+  +anchor-h3('Raised')
+
+  each _color in colors
+      
+    +button(_color)(class='btn-leveled')
+  
+  hr
+
+  +anchor-h4('Custom')
+
+  button.btn.btn-warning.rounded-circle.shadow-4(type='button') 
+    i.far.fa-heart 
+
+  button.btn.btn-primary.rounded-pill.shadow-4(type='button') 
+    span.font-weight-bold Hello World 
+    i.fas.fa-globe-africa
+
+  button.btn.btn-success.rounded-0(type='button') 
+    |Send
+
+  button.btn.btn-outline-info.border-0.btn-hover-leveled(type='button') 
+    span.font-weight-bold Hire
+
+  button.btn.btn-leveled.btn-outline-dark(type='button') Dark

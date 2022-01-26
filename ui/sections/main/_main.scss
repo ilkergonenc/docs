@@ -1,0 +1,37 @@
+.docs-content {
+  padding: 1.25rem 1.5rem;
+
+  > h2, > h3, > h4, > h5 {
+    border-top: 1px dashed $gray-400;
+    padding-top: 0.75rem;
+    font-weight: 400;
+  }
+  h1.page-title {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 0.75;
+    margin-bottom: 2rem;
+  }
+
+  p.page-description {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  // .page-content > h2:not(:first-child) {
+  //   margin-top: 3rem;
+  // }
+
+  .page-content .toc-point {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .docs-content > table {
+    display: block;
+    overflow-x: auto;
+  }
+}

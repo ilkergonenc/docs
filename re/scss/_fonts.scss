@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext');
+
+$font-family-brand: 'Comfortaa', sans-serif !default;
+
+.font-family-brand {
+  font-family: $font-family-brand;
+}
+
+// html, body {
+//   font-family: $font-family-brand;
+// }

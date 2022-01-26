@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+include ../@mixins.pug
+
+block variables
+
+- var _root = "../../../"
+
+html(lang='en')
+
+  head
+    block head
+      include ./components/head.pug 
+
+  body
+    header#docsHeader.sticky-top.bg-white.shadow-sm
+      include ../sections/header/header.pug    
+        
+    .container-fluid: .row
+      aside#docsSidebar.docs-sidebar.drawer-lg.fixed.col-8.col-md-4.col-lg-2.left-sided
+        include ../sections/aside/aside.pug 
+
+      aside.docs-toc.d-none.d-md-block.col-md-3.col-lg-2.order-last
+        nav#nav-toc: ul.toc-list-group
+
+      main.docs-content.col-12.col-md-9.col-lg-8.offset-lg-2(role='main')
+        include ../sections/main/main.pug 
+
+    block foot
+      include ./components/foot.pug 

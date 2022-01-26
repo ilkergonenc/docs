@@ -1,0 +1,59 @@
+//- Anchor Headings
+mixin anchor-h2(title)
+  - var _id = title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+  h2.toc-point.text-capitalize(id=_id, data-toc='h2')= title
+mixin anchor-h3(title)
+  - var _id = title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+  h3.toc-point.text-capitalize(id=_id, data-toc='h3')= title
+mixin anchor-h4(title)
+  - var _id = title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+  h4.toc-point.text-capitalize(id=_id, data-toc='h4')= title
+
+//- Code Highlight
+mixin highlight(lang)
+  figure.highlight
+    pre
+      code(class=lang)
+        block
+
+mixin highlightTab(lang)
+  figure.highlight.highlight-tab
+    pre
+      code(class=lang)
+        block
+
+//- External Link
+mixin link-ext(href, title)
+  a.btn.btn-link.px-0(href=href, title=title, target='_blank')
+    i.fas.fa-external-link-alt.mr-2
+    span= title
+
+mixin example-tab(name, _html, _css, _js)
+  .card.example.mt-3
+    ul.nav.nav-tabs(id=name+'Tab' role='tablist')
+      li.nav-item
+        a.nav-link.active(id=name+'PreviewTab' data-toggle='tab' href='#'+name+'Preview' role='tab' aria-controls=name+'Preview' aria-selected='true') Preview
+      if _html === true
+        li.nav-item
+          a.nav-link(id=name+'HtmlTab' data-toggle='tab' href='#'+name+'Html' role='tab' aria-controls=name+'Html' aria-selected='true') Html
+      if _css === true
+        li.nav-item
+          a.nav-link(id=name+'CssTab' data-toggle='tab' href='#'+name+'Css' role='tab' aria-controls=name+'Css' aria-selected='true') Css
+      if _js === true
+        li.nav-item
+          a.nav-link(id=name+'JsTab' data-toggle='tab' href='#'+name+'Js' role='tab' aria-controls=name+'Js' aria-selected='true') Js
+    .tab-content(id=name+'TabContent')
+      block
+
+mixin tab-preview(name)
+  .tab-pane.fade.show.active(id=name+'Preview' class!=attributes.class role='tabpanel' aria-labelledby=name+'PreviewTab')
+    block
+mixin tab-html(name)
+  .tab-pane.fade(id=name+'Html' role='tabpanel' aria-labelledby=name+'HtmlTab')  
+    block
+mixin tab-css(name)
+  .tab-pane.fade(id=name+'Css' role='tabpanel' aria-labelledby=name+'CssTab')   
+    block
+mixin tab-js(name)
+  .tab-pane.fade(id=name+'Js' role='tabpanel' aria-labelledby=name+'JsTab')   
+    block
