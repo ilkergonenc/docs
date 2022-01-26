@@ -6,7 +6,7 @@ nav.text-right
   ul#sidebarAccordion.sidebar-accordion
     each item in docs
       - var slug = item.group;
-      - var title = str.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()});
+      - var title = slug.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()}).replace('-', ' ').replace('-', ' ');
       - var headId = 'heading' + title.replace(' ', '');
       - var _headId = '#' + headId;
       - var collapseId = 'collapse' + title.replace(' ', '');
@@ -15,9 +15,9 @@ nav.text-right
         a.sidebar-accordion-group-link(id=headId, data-toggle='collapse', data-target=_collapseId, aria-expanded='false', aria-controls=collapseId) #{title}
         .collapse(id=collapseId, aria-labelledby=headId, data-parent='#sidebarAccordion')
           ul.sidebar-accordion-group-list
-            each item in item.items
-              - var itemSlug = item;
-              - var itemTitle = itemStr.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()});
+            each chlidItem in item.items
+              - var itemSlug = chlidItem;
+              - var itemTitle = itemSlug.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {return txtVal.toUpperCase()}).replace('-', ' ').replace('-', ' ');
               - var _href = '/docs/' + slug + '/' + itemSlug + '/';
               li.sidebar-accordion-group-list-item 
                 a.sidebar-accordion-group-list-link(href=_href) #{itemTitle}
